@@ -26,12 +26,23 @@ void print_triangle(int leftCol, int size)
   }
 }
 
-// Prints an arrow 
+// Prints an arrow
 void print_arrow(int leftCol, int size)
 {
-  print_triangle(leftCol, size);
-  print_square(leftCol+(leftCol/1.25), size);
+  //print_triangle(leftCol, size);
+  for (int row = 0; row <= size; row++) {
+    int minCol = leftCol + size - row, maxCol = leftCol + size + row;
+    int col;
+    for (col = 0; col < minCol; col++) putchar(' ');
+    for (       ; col <= maxCol; col++) putchar('*');
+    putchar('\n');
+  }
+  //print_square(leftCol+(leftCol/1.25), size);
+  int endCol = leftCol+(leftCol/1.25) + size;
+  for (int row = 0; row < size; row++){
+    int col;
+    for (col = 0; col < leftCol+(leftCol/1.25); col++) putchar(' ');
+    for (       ; col < endCol;  col++) putchar('*');
+    putchar('\n');
+  }
 }
-
-
-  

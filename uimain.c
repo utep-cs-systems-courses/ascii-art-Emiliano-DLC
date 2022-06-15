@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "draw.h"
+#include <string.h>
 
-int main() 
+int main()
 {
   puts("Welcome!");
 
@@ -26,8 +27,17 @@ int main()
       break;
     case 'c':
       puts("You selected chars:");
-      for (char c = 'A'; c < 'D'; c++)
-	print_char_11x16(c);
+      for (char c = 'A'; c < 'D'; c++){
+        print_char_11x16(c);
+      }
+      char name[]  = "Emiliano";
+      for (int i= 0; i < strlen(name); i++){
+        print_char_5x7(name[i]);
+      }
+      char last[]  = "de la Cruz";
+      for (int i= 0; i < strlen(last); i++){
+        print_char_8x12(last[i]);
+      }
       break;
     case 'a':
       puts("You selected arrow:");
